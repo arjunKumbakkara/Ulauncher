@@ -306,7 +306,9 @@ class PreferencesUlauncherDialog(Gtk.Dialog, WindowHelper):
     ######################################
 
     def _load_prefs_html(self, page=''):
-        self.webview.load_uri("file://%s#/%s" % (get_data_file('preferences', 'index.html'), page))
+        # uri = "file://%s#/%s" % (get_data_file('preferences', 'dist', 'index.html'), page)
+        uri = "file://%s#/%s" % (get_data_file('preferences', 'index.html'), page)
+        self.webview.load_uri(uri)
 
     def _get_bool(self, str_val):
         return str(str_val).lower() in ('true', '1', 'on')
